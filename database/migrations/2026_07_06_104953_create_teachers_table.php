@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('user')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('employee_code')->unique();
-            $table->integer('phone_number');
+            $table->string('phone_number');
             $table->string('adress');
-            $table->integer('joining_date');
             $table->date('joining_date');
-            $table->string('photo');    
+            $table->string('photo')->nullable();    
             $table->timestamps();
         });
     }

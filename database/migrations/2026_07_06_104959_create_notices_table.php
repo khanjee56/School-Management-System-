@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('content');
-            $table->foreignId('posted_by')->constrained('users')->onDelete('cascades');
-            $table->enum('role',['all','teacher','students',"parents"])->default('all');
+            $table->foreignId('posted_by')->constrained('users')->onDelete('cascade');
+            $table->enum('for_role',['all','teacher','student',"parents"])->default('all');
             $table->timestamps();
         });
     }
