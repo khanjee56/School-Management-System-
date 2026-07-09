@@ -26,6 +26,24 @@ class SchoolSeeder extends Seeder
         'password' => Hash::make('123456'),
         'role' => 'admin',
     ]);
+    User::create([
+        'name' => 'parent1',
+        'email' => 'parent1@school.com',
+        'password' => Hash::make('123456'),
+        'role' => 'parent',
+    ]);
+    User::create([
+        'name' => 'parent2',
+        'email' => 'parent2@school.com',
+        'password' => Hash::make('123456'),
+        'role' => 'parent',
+    ]);
+    User::create([
+        'name' => 'parent3',
+        'email' => 'parent3@school.com',
+        'password' => Hash::make('123456'),
+        'role' => 'parent',
+    ]);
 
     // School Classes
     SchoolClass::create([
