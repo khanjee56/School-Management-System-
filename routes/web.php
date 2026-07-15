@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ParentController;
 use App\Http\Controllers\TeacherController;
-use App\Models\Teacher;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
@@ -34,7 +33,21 @@ Route::middleware('auth')->get('redirect', function(){
 
 Route::middleware(['auth','admin'])->prefix('admin')->group(function(){
     Route::get('/dashboard', [AdminController::class, 'dashboard']);
+    Route::get('/classes', [AdminController::class, 'classesindex']);
+    Route::get('/classes/create', [AdminController::class, 'createclass']);
+    Route::post('/classes/store', [AdminController::class, 'storeclass']);
+    Route::get('/classes/{id}/edit', [AdminController::class, 'editclass']);
+    Route::put('/classes/{id}/update', [AdminController::class, 'updateclass']);
+    Route::delete('/classes/{id}/delete', [AdminController::class, 'destroyclass']);
+    Route::get('/subjects', [AdminController::class,'subjectindex']);
+    Route::get('/subjects/create', [AdminController::class,'subjectcreate']);
+    Route::post('/subjects/store',[AdminController::class, 'subjectstore']);
+    Route::get('/subjects/{id}/edit',[AdminController::class, 'subjectedit']);
+    Route::put('/subjects/{id}/update',[AdminController::class, 'subjectupdate']);
+    Route::delete('/subjects/{id}',[AdminController::class, 'subjectdelete']);
+
 });
+
 Route::middleware(['auth','teacher'])->prefix('teacher')->group(function(){
     Route::get('/dashboard', [TeacherController::class, 'dashboard']);
 });

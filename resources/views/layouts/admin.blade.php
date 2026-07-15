@@ -189,15 +189,15 @@
         <hr class="sidebar-divider">
       
 
-        <a href="/hr/departments" class="{{ request()->is('hr/departments*') ? 'active' : '' }}">
+        <a href="/hr/departments" class="{{ request()->is('admin/departments*') ? 'active' : '' }}">
             <i class="fas fa-building"></i>Teacher
         </a>
 
-        <a href="/hr/designations" class="{{ request()->is('hr/designations*') ? 'active' : '' }}">
+        <a href="/admin/classes" class="{{ request()->is('admin/classes*') ? 'active' : '' }}">
             <i class="fas fa-briefcase"></i> Classes
         </a>
 
-        <a href="/hr/designations" class="{{ request()->is('hr/designations*') ? 'active' : '' }}">
+        <a href="/admin/subjects" class="{{ request()->is('admin/subjects*') ? 'active' : '' }}">
             <i class="fas fa-briefcase"></i> Subject
         </a>
 
