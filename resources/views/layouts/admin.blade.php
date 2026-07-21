@@ -189,8 +189,11 @@
         <hr class="sidebar-divider">
       
 
-        <a href="/hr/departments" class="{{ request()->is('admin/departments*') ? 'active' : '' }}">
+        <a href="/admin/teachers" class="{{ request()->is('admin/teachers*') ? 'active' : '' }}">
             <i class="fas fa-building"></i>Teacher
+        </a>
+        <a href="/admin/students" class="{{ request()->is('admin/students*') ? 'active' : '' }}">
+            <i class="fas fa-building"></i>Student
         </a>
 
         <a href="/admin/classes" class="{{ request()->is('admin/classes*') ? 'active' : '' }}">

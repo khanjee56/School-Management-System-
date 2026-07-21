@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-     protected $fillable = ['user_id','class_id','date_of_birth','rollnumber','gender','phone','adress','parent_name',
+     protected $fillable = ['user_id','class_id','date_of_birth','roll_number','gender','phone','address','parent_name',
      'parent_phone','parent_email'];
 
      public function schoolclass(){
-        return $this->belongsTo(SchoolClass::class);
+        return $this->belongsTo(SchoolClass::class,'class_id');
     }
      public function user(){
         return $this->belongsTo(User::class);

@@ -45,6 +45,18 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function(){
     Route::get('/subjects/{id}/edit',[AdminController::class, 'subjectedit']);
     Route::put('/subjects/{id}/update',[AdminController::class, 'subjectupdate']);
     Route::delete('/subjects/{id}',[AdminController::class, 'subjectdelete']);
+    Route::get('/teachers', [AdminController::class, 'teacherindex']);
+    Route::get('/teachers/create', [AdminController::class, 'teachercreate']);
+    Route::post('/teachers/store', [AdminController::class, 'teacherstore']);
+    Route::get('/teachers/{id}/edit',[AdminController::class, 'teacheredit']);
+    Route::put('/teachers/{id}/update', [AdminController::class, 'teacherupdate']);
+    Route::delete('/teachers/{id}/delete', [AdminController::class, 'teacherdelete']);
+    Route::get('/students', [AdminController::class, 'studentindex']);
+    Route::get('/students/create', [AdminController::class, 'studentcreate']);
+    Route::post('/students/store', [AdminController::class, 'studentstore']);
+    Route::get('/students/{id}/edit', [AdminController::class, 'studentedit']);
+    Route::put('/students/{id}/update', [AdminController::class, 'studentupdate']);
+    Route::delete('/students/{id}/delete', [AdminController::class, 'studentdelete']);
 
 });
 
